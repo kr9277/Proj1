@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
         et2 = findViewById(R.id.et2);
         et3 = findViewById(R.id.et3);
         btn = findViewById(R.id.btn);
-        type = et1.getText().toString();
-        first = Double.parseDouble(et2.getText().toString());
-        d = Double.parseDouble(et2.getText().toString());
 
     }
     public void next(View view) {
-        if(type!="invoicing" && type!="engineering"){
+        type = et1.getText().toString();
+        first = Double.parseDouble(et2.getText().toString());
+        d = Double.parseDouble(et3.getText().toString());
+        if(type.equals("invoicing")==false && type.equals("engineering")==false){
             Toast.makeText(this, "you need to choose between invoicing or engineering", Toast.LENGTH_SHORT).show();
             type = et1.getText().toString();
         }
