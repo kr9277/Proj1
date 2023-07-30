@@ -42,7 +42,7 @@ public class SecondActivity extends AppCompatActivity {
         delta = gi.getDoubleExtra("delta", 0.0);
         arr[0]=a1;
         arr_string[0]= String.valueOf(a1);
-        if(kind.equals("invoicing")){
+        if(kind.equals("Invoicing")){
             for(int i=1;i<20;i++){
                 arr[i]=arr[i-1]+delta;
                 arr_string[i]= String.valueOf(arr[i]);
@@ -63,7 +63,7 @@ public class SecondActivity extends AppCompatActivity {
                 tv1.setText(arr_string[0]);
                 tv2.setText(String.valueOf((delta)));
                 tv3.setText(String.valueOf((n)));
-                if(kind.equals("invoicing")){
+                if(kind.equals("Invoicing")){
                     eser = (n * (2*a1 + delta*(n-1)))/2;
                 }
                 else{

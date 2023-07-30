@@ -29,18 +29,23 @@ public class MainActivity extends AppCompatActivity {
         type = et1.getText().toString();
         first = Double.parseDouble(et2.getText().toString());
         d = Double.parseDouble(et3.getText().toString());
-        if(type.equals("invoicing")==false && type.equals("engineering")==false){
-            Toast.makeText(this, "you need to choose between invoicing or engineering", Toast.LENGTH_SHORT).show();
+        if(type.equals("Invoicing")==false && type.equals("Engineering")==false){
+            Toast.makeText(this, "you need to choose between Invoicing or Engineering", Toast.LENGTH_SHORT).show();
             type = et1.getText().toString();
         }
         if(first<-1000000.0 || first>1000000.0){
             Toast.makeText(this, "you need to choose a number between -1000000 to 1000000", Toast.LENGTH_SHORT).show();
             first = Double.parseDouble(et2.getText().toString());
         }
-        if(first<-1000000.0 || first>1000000.0){
+        if(d<-1000000.0 || d>1000000.0){
             Toast.makeText(this, "you need to choose a number between -1000000 to 1000000", Toast.LENGTH_SHORT).show();
             d = Double.parseDouble(et3.getText().toString());
         }
+        if((type.equals("Invoicing")==true || type.equals("Engineering")==true) && (first>-1000000.0 && first<1000000.0) && (d>-1000000.0 && d<1000000.0)){
+            next_activity(view);
+        }
+    }
+    public void next_activity(View view){
         Intent si = new Intent(MainActivity.this, SecondActivity.class);
         si.putExtra("Type", type);
         si.putExtra("First", first);
